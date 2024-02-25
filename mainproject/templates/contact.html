@@ -1,0 +1,36 @@
+{% extends "navbar.html"%}
+
+
+{% block title%}
+contact
+{% endblock%}
+
+{% block content%}
+<section>
+<h1 class="text2 mt-5">Contact Us</h1>
+<div class="newline"></div>
+<div class="container">
+<form method="POST" class="was-validated">
+  {%csrf_token%}
+  {%include "messages.html"%}
+    
+    <div class="form-group" style="border-radius:20px;">
+     
+      <label for="name"></label>
+      <input name="name" type="text" class="form-control" id="name" placeholder="Name" required style="border:groove;">
+    
+      <label for="email"></label>
+      <input name="email" type="email" class="form-control" id="email" placeholder="Email" required  style="border:groove;">
+    
+   
+   
+      <label for="subject"></label>
+      <textarea name="subject" class="form-control" id="subject"  placeholder="Write something...." required rows="3" style="border:groove;"></textarea>
+      <input type="submit" class="btn btn-success btn-lg mt-1 ml-4" value="submit">
+    </div>
+</div>
+
+</form>
+</section>
+
+{% endblock%}

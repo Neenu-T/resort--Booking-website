@@ -1,0 +1,40 @@
+{% extends "navbar.html"%}
+
+
+{% block title%}
+register
+{% endblock%}
+
+{% block content%}
+{%load static%}
+
+<body id="bg" >
+<section>
+  
+  
+<h1 class="text2">Register Now</h1>
+<div class="newline"></div>
+<div class="registr container mt-5 pt-5 col-5">
+  
+
+    <form method="POST">
+        {% csrf_token %}
+        {%include "messages.html"%}
+
+        <div class=" mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" name="username" required class="form-control"  placeholder="E-mail" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password"  placeholder="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn bg-dark text-white">Submit</button>
+      </form>
+</div>
+
+</section>
+
+{% endblock%}

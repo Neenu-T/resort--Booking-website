@@ -1,0 +1,23 @@
+{% extends "navbar.html"%}
+
+
+{% block title%}
+booked data
+{% endblock%}
+
+{% block content%}
+{% load static%}
+
+
+
+<body>
+<section>
+    <h1>Booked Data</h1>
+
+    {% for booking in booked_data %}
+        <p>{{ booking.full_name }} has booked from {{ booking.start_date }} to {{ booking.end_date }}</p>
+        
+    {% endfor %}
+</body>
+</section>
+{% endblock %}

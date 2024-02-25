@@ -1,0 +1,56 @@
+{% extends "navbar.html"%}
+
+
+{% block title%}
+about
+{% endblock%}
+
+{% block content%}
+{% load static%}
+
+
+<section>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+  
+            <img src="{% static '/images/abt1.jpg' %}" class="img1" style="width:360px;height:360px;padding-top:50px;">
+            <!-- <img src="1495553537035.jpeg" > -->
+            </div>
+            <div class="col-md-5 pt-5 section-intro">
+  
+            <h1 class="text1">About Us</h1>
+            
+          
+            <div class="newline" style="margin-left:40px;"></div>
+            
+            <p>A resort is not always a commercial establishment operated by a single company,
+                 but in the late 20th century, that sort of facility became more common. In British English,
+                 "resort" means a town which people visit for holidays and days out which 
+                  usually contains hotels at which such holidaymakers stay.</p>
+  
+                <a href="{% url 'gallery' %}" class="btn btn-main mt-3" style="border-radius: 100px;border:none;color:#fff;">Our Rooms</a>
+         
+            
+            </div>
+          
+            
+               </div>
+               
+              </div>
+  
+                    
+                   
+            </div>
+            </div>
+  
+            </div>
+          
+      </div>
+  </div>
+               
+  </section>
+            
+                 
+
+{% endblock%}

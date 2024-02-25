@@ -1,0 +1,145 @@
+{% extends "navbar.html"%}
+
+
+{% block title%}
+Home
+{% endblock%}
+
+{% block content%}
+{% load static %}
+
+<section id="home" class="bg-cover bg-section" style="background-image: url('{% static "images/bg1.jpg"%}')";>
+  <div class="container text-center">
+      <div class="row">
+          <div class="col-12">
+              <h1 class="maintext">DISCOVER<br> COZY ROOMS</h1>
+              <p class="animation">PERFECT FOR ANY TRIP</p>
+
+              
+
+
+</div>
+</div>
+
+</section> 
+
+<section>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+          <img src="{% static '/images/side img.jpg' %}" style="width:360px;height:360px">
+          <!-- <img src="1495553537035.jpeg" > -->
+          </div>
+          <div class="col-md-5 pt-5 section-intro">
+
+          <h1 class="text1">Relax at our Resorts</h1>
+          
+        
+          <div class="newline" style="margin-left:40px;"></div>
+          
+          <p>Resorts  and Suites is a family-owned Boutique Reosrt that desires
+            to cater and provide guests with personalized 
+            hospitality based on what they prefer.Whether the guest is looking
+             for quiet time and lots of privacy or seeking energetic,
+             friendly environment in the most delightful place away from home,
+              we can provide it.</p>
+
+              <a href="{% url 'about' %}" class="btn btn-main mt-3 mb-5" style="border-radius: 100px;border:none;color:#fff;">See More</a>
+       
+          
+          </div>
+        
+          
+             </div>
+             
+            </div>
+
+                  
+                 
+          </div>
+          </div>
+
+          </div>
+        
+    </div>
+</div>
+             
+</section>
+<section class="text-center">
+  <div class="container">
+      <div class="row">
+          <div class="col section-intro text-center">
+              <h1 class="text1">Right Services for Great Customers</h1>
+              <div class="newline"></div>
+                </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="works1">
+                          <div class="icon-img">
+                            <i class="fa-solid fa-person-swimming"  style="height:50px;width:50px;padding-top:25px;
+                            color: #2565AE;" ></i>
+                         
+                          </div>
+                          <h5 class="mt-3 pt-3">Swimming Pool</h5>
+                          <p>One of the main attractions at the hotel is our extensive, 
+                            luxurious 20-metre indoor
+                            swimming pool.</p>
+                          
+                        </div>
+                        </div>
+                        
+                          <div class="col-md-3">
+                            <div class="works1">
+                              <div class="icon-img">
+                                <i class="fa-solid fa-wifi"  style="height:50px;width:50px;padding-top:25px;
+                                color: #2565AE;"></i>
+                                
+                              </div>
+                              <h5 class="mt-3 pt-3">Free Wi-Fi</h5>
+                              <p>We provide our guests with free high-speed Wi-Fi connection 
+                                throughoutn the whole Resorts</p>
+                         
+                            </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="works1">
+                                <div class="icon-img">
+                                <i class="fa-solid fa-utensils" style="height:50px;width:50px;padding-top:25px;
+                                color: #2565AE;"></i>
+                                  
+                                </div>
+                                <h5 class="mt-3 pt-3">Restaurants</h5>
+                                <p>Restaurants at Lux Hotel offer a vast choice of great
+                                  dishes that can satisfy even the most
+                                  CACUSe</p>
+                         
+                              </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="works1">
+                                  <div class="icon-img">
+                                    <i class="fa-solid fa-bicycle"  style="height:50px;width:50px;padding-top:25px;
+                                    color: #2565AE;"></i>
+                                    
+                                  </div>
+                                  <h5 class="mt-3 pt-3">Bike Rentals</h5>
+                                  <p>Our Resorts also offers bike rental services to our guests and visitors. 
+                                  We provide bikes at very affordable</p>
+                            
+                                </div>
+                              </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+              </div>
+          </div>
+          
+      </section>
+      <script type="text/javascript" src="{%static 'js/text.js'%}"></script>
+    
+
+
+  
+{% endblock%}

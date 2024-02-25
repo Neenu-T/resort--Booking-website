@@ -1,0 +1,87 @@
+{% extends "navbar.html"%}
+
+
+
+
+{% block title%}
+hotel detail
+{% endblock%}
+{% block content %}
+
+<div class="container mt-5 pt-5">
+    <div class="row search-card-result">
+                
+
+                    
+        <div class="col-md-3">
+           
+        
+        </a></div>
+   
+        <div class="col-md-5">
+            <form method="post" action="">
+                {% csrf_token %}
+                <h1>Payment Page</h1>
+    
+                {% if latest_booking %}
+                    <h2>Your Booking Information:</h2>
+                    
+                    <p><b>Resort:</b>{{latest_booking.hotel.hotel_name}}</p>
+                    <p>Name: {{ latest_booking.full_name }}</p>
+                    <p>Check-in: {{ latest_booking.start_date }}</p>
+                    <p>Check-out: {{ latest_booking.end_date }}</p>
+                    <p>Total Amount: $<b>{{ latest_booking.hotel.hotel_price }}</b></p>
+                    
+                    <form method="POST" >
+                      {% csrf_token %}
+                      
+                      {% comment %} <button type="submit" class="btn-danger">Cancel Booking</button> {% endcomment %}
+                      
+                  </form>
+                {% else %}
+                    <p>No booking found.</p>
+                {% endif %}
+                <p>Please proceed with the payment to confirm your booking.</p>
+              
+                <div id="paypal-button-container"></div>
+                <button type="submit" class="btn-success">Pay Now</button>
+            </form>
+
+            <script>
+               
+                paypal.Buttons({
+                  createOrder: function(data, actions) {
+                    return actions.order.create({
+                      purchase_units: [{
+                        amount: {
+                          value: '{{ booking_summary.total_amount }}'
+                        }
+                      }]
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                      // Insert logic to handle payment success, e.g., update booking status
+                      console.log(details);
+                      alert('Payment completed!');
+                    });
+                  },
+                  onError: function(err) {
+                    // Insert logic to handle errors
+                    console.error(err);
+                    alert('Payment error. Please try again.');
+                  }
+                }).render('#paypal-button-container');
+              </script>
+        </body>
+        </html>
+        
+        
+            
+            
+        
+       
+    
+</div>
+
+{% endblock%}
